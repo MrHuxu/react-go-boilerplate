@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{{ .title }}</title>
+    <link rel="shortcut icon" type="image" href="http://freewheel.tv/favicon.png">
+  </head>
+  <body>
+    <div id='bug-bash-tools' class='full-height'/>
+    {{ if .prd }}
+      <script src="/assets/bundle.js"></script>
+    {{ else }}
+      <script src='http://localhost:6789/assets/bundle.js'></script>
+    {{ end }}
+  </body>
+</html>
