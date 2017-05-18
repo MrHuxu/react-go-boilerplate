@@ -9,7 +9,7 @@
     "dev-server": "gin --port 8283 --appPort 13109 run main.go",
     "dev": "./node_modules/concurrently/src/main.js 'npm run webpack-dev-server' 'npm run dev-server'",
     "webpack": "./node_modules/webpack/bin/webpack.js --config webpack.config.prd.js",
-    "prd-server": "go build main.go && ENV=Production ./main",
+    "prd-server": "go build main.go && ENV=production ./main",
     "prd": "npm run webpack && npm run prd-server"
   },
   "repository": {

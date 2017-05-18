@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-var atPrd = os.Getenv("ENV") == "Production"
+var atPrd = os.Getenv("ENV") == "production"
 
 func Index(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.tmpl", gin.H{
