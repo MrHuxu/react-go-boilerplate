@@ -17,3 +17,4 @@ A boilerplate for fastly building web application based on React & Go.
 - Backend
 
   - [x] Web framework powered by [Gin](https://github.com/gin-gonic/gin)
+  - [x] Hot reload powered by another [Gin](https://github.com/codegangsta/gin)
