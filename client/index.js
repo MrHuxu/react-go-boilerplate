@@ -5,20 +5,15 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Route } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
-import { StyleRoot } from 'radium';
 import store, { history } from './store';
 
 import App from './components/App';
 
-import { appContainer } from './styles/app';
-
 render(
   <Provider store = {store}>
-    <StyleRoot style = {appContainer}>
-      <ConnectedRouter history = {history}>
-        <Route path = '/' component = {App} />
-      </ConnectedRouter>
-    </StyleRoot>
+    <ConnectedRouter history = {history}>
+      <Route path = '/' component = {App} />
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('bug-bash-tools')
 );

@@ -5,7 +5,10 @@ import createHistory from 'history/createBrowserHistory';
 
 export const history = createHistory();
 
+import test from './reducers/test-reducer';
+
 const rootReducer = combineReducers({
+  test,
   routing : routerReducer
 });
 
