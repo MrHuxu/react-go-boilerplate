@@ -46,11 +46,10 @@
     "less-loader": "^4.0.3",
     "nprogress": "^0.2.0",
     "prop-types": "^15.5.10",
-    "radium": "^0.19.0",
+    "radium": "^0.19.1",
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
-    "react-hot-loader": "^1.3.1",
-    "react-redux": "^5.0.4",
+    "react-redux": "^5.0.5",
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
     "react-router-redux": "^5.0.0-alpha.4",
@@ -73,6 +72,7 @@
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.0.1",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "react-hot-loader": "^1.3.1"
   }
 }
