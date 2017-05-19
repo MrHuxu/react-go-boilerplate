@@ -1,7 +1,8 @@
 import thunk from 'redux-thunk';
-import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 export const history = createHistory();
 
@@ -17,4 +18,7 @@ const rootMiddleware = applyMiddleware(
   thunk
 );
 
-export default compose(rootMiddleware)(createStore)(rootReducer);
+export default createStore(
+  rootReducer,
+  'development' === process.env.NODE_ENV ? composeWithDevTools(rootMiddleware) : rootMiddleware
+);

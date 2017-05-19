@@ -36,7 +36,10 @@ A boilerplate for fastly building web application based on React & Go.
         go get github.com/codegangsta/gin
         npm install
 
-2. Run server:
+2. It's recommended to install the [React DevTools](https://github.com/facebook/react-devtools) and [Redux DevTools](https://github.com/gaearon/redux-devtools) for frontend debugging.
+
+
+3. Run server:
 
     - Development mode
 
