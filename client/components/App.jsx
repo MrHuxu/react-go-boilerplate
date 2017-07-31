@@ -6,9 +6,9 @@ import { Style } from 'radium';
 
 import { shape, bool, object, string, func } from 'prop-types';
 
-import Get from './Get';
-import Post from './Post';
-import Random from './Random';
+import Get from './get';
+import Post from './post';
+import Random from './random';
 
 import { global, naviPanel, naviBtn, resultPanel } from '../styles/app';
 

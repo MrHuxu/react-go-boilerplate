@@ -7,7 +7,7 @@ import { Route } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 import store, { history } from './store';
 
-import App from './components/App';
+import App from './components/app';
 
 render(
   <Provider store = {store}>
