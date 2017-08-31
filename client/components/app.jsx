@@ -40,28 +40,28 @@ import { global, naviPanel, naviBtn, resultPanel } from '../styles/app';
 
 const App = ({ match, push }) => (
   <div>
-    <Style rules = {global} />
-    <div style = {naviPanel}>
-      <Link to = '/get'>
-        <button style = {naviBtn}> to Get </button>
+    <Style rules={ global } />
+    <div style={ naviPanel }>
+      <Link to='/get'>
+        <button style={ naviBtn }> to Get </button>
       </Link>
 
-      <Link to = '/post'>
-        <button style = {naviBtn} > to Post </button>
+      <Link to='/post'>
+        <button style={ naviBtn } > to Post </button>
       </Link>
 
-      <button style = {naviBtn} onClick = {() => push(`/random?${Math.random()}`)}>
+      <button style={ naviBtn } onClick={ () => push(`/random?${Math.random()}`) }>
         to Random
       </button>
     </div>
 
-    <div style = {resultPanel}>
+    <div style={ resultPanel }>
       {('/' === window.location.hostname || match.isExact) ? (
-        <Redirect to = {'/get'} />
+        <Redirect to={ '/get' } />
       ) : null}
-      <Route path = '/get' component = {Get} />
-      <Route path = '/post' component = {Post} />
-      <Route path = '/random' component = {Random} />
+      <Route path='/get' component={ Get } />
+      <Route path='/post' component={ Post } />
+      <Route path='/random' component={ Random } />
     </div>
 
   </div>

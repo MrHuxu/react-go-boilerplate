@@ -8,14 +8,14 @@ const Get = ({ fetchSomething }) => {
 
   return (
     <div>
-      <input placeholder = 'key' ref = {node => key = node} />
-      <input placeholder = 'value' ref = {node => value = node} />
+      <input placeholder='key' ref={ node => key = node } />
+      <input placeholder='value' ref={ node => value = node } />
 
-      <button onClick = {() => {
+      <button onClick={ () => {
         let tmp = {};
         tmp[key.value] = value.value;
         fetchSomething(tmp);
-      }}>
+      } }>
         get!
       </button>
     </div>
