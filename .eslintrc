@@ -32,6 +32,7 @@
     "semi": [2, "always"],
     "max-len": [2, 500, 2],
     "object-curly-spacing": [1, "always"],
+    "jsx-quotes": [2, "prefer-double"],
     "key-spacing": [2, {
       "singleLine": {
         "beforeColon": false,

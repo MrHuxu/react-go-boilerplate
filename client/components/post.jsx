@@ -9,7 +9,7 @@ const Post = ({ createSomething }) => {
   return (
     <div>
       key:
-      <input placeholder='value' ref={ node => value = node } />
+      <input placeholder="value" ref={ node => value = node } />
 
       <button onClick={ () => {
         createSomething({ key: value.value });

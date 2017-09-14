@@ -42,11 +42,11 @@ const App = ({ match, push }) => (
   <div>
     <Style rules={ global } />
     <div style={ naviPanel }>
-      <Link to='/get'>
+      <Link to="/get">
         <button style={ naviBtn }> to Get </button>
       </Link>
 
-      <Link to='/post'>
+      <Link to="/post">
         <button style={ naviBtn } > to Post </button>
       </Link>
 
@@ -59,9 +59,9 @@ const App = ({ match, push }) => (
       {('/' === window.location.hostname || match.isExact) ? (
         <Redirect to={ '/get' } />
       ) : null}
-      <Route path='/get' component={ Get } />
-      <Route path='/post' component={ Post } />
-      <Route path='/random' component={ Random } />
+      <Route path="/get" component={ Get } />
+      <Route path="/post" component={ Post } />
+      <Route path="/random" component={ Random } />
     </div>
 
   </div>

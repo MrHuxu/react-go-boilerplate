@@ -3,10 +3,9 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import test from './reducers/test-reducer';
 
 export const history = createHistory();
-
-import test from './reducers/test-reducer';
 
 const rootReducer = combineReducers({
   test,

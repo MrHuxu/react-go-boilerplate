@@ -8,8 +8,8 @@ const Get = ({ fetchSomething }) => {
 
   return (
     <div>
-      <input placeholder='key' ref={ node => key = node } />
-      <input placeholder='value' ref={ node => value = node } />
+      <input placeholder="key" ref={ node => key = node } />
+      <input placeholder="value" ref={ node => value = node } />
 
       <button onClick={ () => {
         let tmp = {};
