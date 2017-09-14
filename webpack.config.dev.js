@@ -1,8 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const Dashboard = require('webpack-dashboard');
 const DashboardPlugin = require('webpack-dashboard/plugin');
-const dashboard = new Dashboard();
 
 module.exports = {
   entry : './client/index',
@@ -41,7 +39,7 @@ module.exports = {
   devtool : 'source-map',
 
   plugins : [
-    new DashboardPlugin(dashboard.setData),
+    new DashboardPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV' : '"development"'
