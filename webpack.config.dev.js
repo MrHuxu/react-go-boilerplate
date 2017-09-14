@@ -1,5 +1,8 @@
-const path    = require('path');
+const path = require('path');
 const webpack = require('webpack');
+const Dashboard = require('webpack-dashboard');
+const DashboardPlugin = require('webpack-dashboard/plugin');
+const dashboard = new Dashboard();
 
 module.exports = {
   entry : './client/index',
@@ -16,7 +19,7 @@ module.exports = {
 
   module : {
     loaders : [
-      { test: /\.(js|jsx)$/, exclude: /node_modules/, loaders: ['react-hot-loader', 'babel-loader'] },
+      { test: /\.(js|jsx)$/, exclude: /node_modules/, loaders: ['babel-loader'] },
       { test: /\.css$/, loaders: ['style-loader', 'css-loader'] },
       { test: /\.less$/, loaders: ['style-loader', 'css-loader', 'less-loader'] },
       { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loaders: ['url-loader?limit=10000&minetype=application/font-woff'] },
@@ -38,6 +41,7 @@ module.exports = {
   devtool : 'source-map',
 
   plugins : [
+    new DashboardPlugin(dashboard.setData),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV' : '"development"'

@@ -44,11 +44,7 @@
         "afterColon": true
       }
     }],
-    "no-multi-spaces": [2, {
-      "exceptions": {
-        "VariableDeclarator": true
-      }
-    }],
+    "no-multi-spaces": 2,
     "import/extensions": 1,
     "react/display-name": 1,
     "react/jsx-boolean-value": 1,
