@@ -5,7 +5,7 @@ import { string } from 'prop-types';
 const Randim = ({ search }) => (
   <div>
     <h1> this is a Randim </h1>
-    <p> {search} </p>
+    <p> { search } </p>
   </div>
 );
 

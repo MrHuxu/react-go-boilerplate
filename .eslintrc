@@ -90,7 +90,7 @@
     }],
     "react/jsx-wrap-multilines": 1,
     "react/jsx-equals-spacing": [1, "never"],
-    "react/jsx-curly-spacing": [1, { "when": "always", "allowMultiline": true }],
+    "react/jsx-curly-spacing": [1, { "when": "always", "allowMultiline": true, "children": true }],
     "react/jsx-no-bind": [1, {
       "allowArrowFunctions": true,
       "allowBind": true

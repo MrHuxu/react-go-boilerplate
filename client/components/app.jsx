@@ -56,9 +56,9 @@ const App = ({ match, push }) => (
     </div>
 
     <div style={ resultPanel }>
-      {('/' === window.location.hostname || match.isExact) ? (
+      { ('/' === window.location.hostname || match.isExact) ? (
         <Redirect to={ '/get' } />
-      ) : null}
+      ) : null }
       <Route path="/get" component={ Get } />
       <Route path="/post" component={ Post } />
       <Route path="/random" component={ Random } />
