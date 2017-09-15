@@ -1,11 +1,11 @@
 const { screen } = require('blessed');
 const XTerm = require('blessed-xterm');
 
-const { floor } = Math;
+const { floor, max } = Math;
 
 const app = screen({
   smartCSR : true,
-  title    : 'Popola Dashboard'
+  title    : 'React & Go Boilerplate Dashboard'
 });
 
 const commands = [{
@@ -41,7 +41,7 @@ const XTermOpts = {
   style      : {
     fg        : 'default',
     bg        : 'default',
-    border    : { fg: 'default' },
+    border    : { fg: '#EA4C89' },
     hover     : { border: { fg: 'green' } },
     focus     : { border: { fg: 'blue' } },
     scrolling : { border: { fg: 'blue' } }
@@ -54,11 +54,9 @@ for (const command of commands) {
 
   panel.on('mouse', function (data) {
     if ('wheelup' === data.action) {
-      let n = Math.max(1, Math.floor(panel.height * 0.10));
-      panel.scroll(-n);
+      panel.scroll(-max(1, floor(panel.height * 0.10)));
     } else if ('wheeldown' === data.action) {
-      let n = Math.max(1, Math.floor(panel.height * 0.10));
-      panel.scroll(+n);
+      panel.scroll(max(1, floor(panel.height * 0.10)));
     }
   });
   app.append(panel);
