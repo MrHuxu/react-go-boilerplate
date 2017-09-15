@@ -1,4 +1,8 @@
-# React Go Boilerplate
+# Popola
+
+> We've been expecting you.
+
+![popola](https://vignette.wikia.nocookie.net/nier/images/c/cb/PopolaArtwork.png/revision/latest/scale-to-width-down/165?cb=20170225031559)
 
 ## Description
 
