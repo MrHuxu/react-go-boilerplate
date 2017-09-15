@@ -4,6 +4,8 @@
 
 A boilerplate for fastly building web application based on React & Go.
 
+![](https://raw.githubusercontent.com/MrHuxu/img-repo/master/react-go-boilerplate/react%20go%20boilerplate.gif)
+
 ## Requirements
 
 
@@ -20,6 +22,7 @@ A boilerplate for fastly building web application based on React & Go.
   - [x] Stylesheet management powered by [Radium](https://github.com/FormidableLabs/radium)
   - [x] Fully-featured router management powered by [react-router](https://github.com/ReactTraining/react-router)
   - [x] Hot reload powered by [react-hot-loader](https://github.com/gaearon/react-hot-loader) (module level hot reload only for stateful component)
+  - [x] Auto re-lint your js/jsx files after editing powered by [eslint-watch](https://github.com/rizowski/eslint-watch)
 
 - Backend
 
@@ -43,7 +46,7 @@ A boilerplate for fastly building web application based on React & Go.
 
     - Development mode
 
-          # execute the command below
+          # execute the command below, then you'll see the dashboard shown above
           # go visit http://localhost:8283 in your browser
           # editing any file will let the server or frontend reload
 

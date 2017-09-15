@@ -37,7 +37,7 @@ const XTermOpts = {
   cursorType : 'block',
   border     : 'line',
   scrollable : true,
-  scrollback : 1000,
+  scrollback : 100000,
   style      : {
     fg        : 'default',
     bg        : 'default',
