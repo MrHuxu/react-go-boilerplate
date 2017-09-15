@@ -11,7 +11,7 @@ import Get from './get';
 import Post from './post';
 import Random from './random';
 
-import { global } from '../styles/app';
+import { global, btnArea } from '../styles/app';
 
 /**
  * Use stateful component for enabling the hot module reload
@@ -24,7 +24,8 @@ class App extends Component {
     return (
       <div>
         <Style rules={ global } />
-        <div>
+        <h1> React & Go Boilerplate </h1>
+        <div style={ btnArea }>
           <Link to="/get">
             <Button type="primary"> to Get </Button>
           </Link>

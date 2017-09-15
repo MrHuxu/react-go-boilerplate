@@ -13,7 +13,8 @@ export const global = {
   },
 
   '*' : {
-    margin : 15
+    margin    : 15,
+    textAlign : 'center'
   },
 
   input : {
@@ -21,4 +22,8 @@ export const global = {
     borderRadius : 6,
     margin       : '0 10px 0 10px'
   }
+};
+
+export const btnArea = {
+  margin : '60px 0 20px 0'
 };
