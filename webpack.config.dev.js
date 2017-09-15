@@ -29,7 +29,7 @@ module.exports = {
           fallback : 'style-loader',
           use      : 'css-loader'
         })
-      },
+      }
     ]
   },
 
@@ -46,10 +46,10 @@ module.exports = {
   devtool : 'source-map',
 
   plugins : [
-    new DashboardPlugin(),
+    new DashboardPlugin({ port: 3080 }),
     new ExtractTextPlugin({
-      filename: `style.css`,
-      allChunks: true
+      filename  : `style.css`,
+      allChunks : true
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
