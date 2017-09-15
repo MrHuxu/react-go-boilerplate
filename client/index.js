@@ -15,5 +15,5 @@ render(
       <Route path="/" component={ App } />
     </ConnectedRouter>
   </Provider>,
-  document.getElementById('bug-bash-tools')
+  document.getElementById('react-go-boilerplate')
 );

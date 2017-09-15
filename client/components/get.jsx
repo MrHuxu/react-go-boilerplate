@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { func } from 'prop-types';
+import { Button } from 'antd';
 import { fetchSomething } from '../actions/test-actions';
 
 const Get = ({ fetchSomething }) => {
@@ -11,13 +12,13 @@ const Get = ({ fetchSomething }) => {
       <input placeholder="key" ref={ node => key = node } />
       <input placeholder="value" ref={ node => value = node } />
 
-      <button onClick={ () => {
+      <Button onClick={ () => {
         let tmp = {};
         tmp[key.value] = value.value;
         fetchSomething(tmp);
       } }>
         get!
-      </button>
+      </Button>
     </div>
   );
 };

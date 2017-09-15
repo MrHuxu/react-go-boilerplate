@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { func } from 'prop-types';
+import { Button } from 'antd';
 import { createSomething } from '../actions/test-actions';
 
 const Post = ({ createSomething }) => {
@@ -11,11 +12,11 @@ const Post = ({ createSomething }) => {
       key:
       <input placeholder="value" ref={ node => value = node } />
 
-      <button onClick={ () => {
+      <Button onClick={ () => {
         createSomething({ key: value.value });
       } }>
         post!
-      </button>
+      </Button>
     </div>
   );
 };
