@@ -36,6 +36,7 @@ A boilerplate for fastly building web application based on React & Go.
 
         go get github.com/MrHuxu/react-go-boilerplate && cd $GOPATH/src/github.com/MrHuxu/react-go-boilerplate
 
+        go get github.com/gin-gonic/gin
         go get github.com/codegangsta/gin
         npm install
 
