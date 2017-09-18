@@ -11,13 +11,17 @@ type Server struct {
 }
 
 func NewServer(port int, templatePath string, staticPath string) *Server {
+	if AtPrd {
+		gin.SetMode(gin.ReleaseMode)
+		gin.DisableConsoleColor()
+	}
 	server := &Server{
 		Engine: gin.Default(),
 		Port:   port,
 	}
 	server.Engine.LoadHTMLGlob(templatePath)
 	server.Engine.Static("/assets", staticPath)
-	server.registerRoutes()
+	server.RegisterRoutes()
 	return server
 }
 

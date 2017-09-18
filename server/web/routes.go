@@ -7,16 +7,16 @@ import (
 	"os"
 )
 
-var atPrd = os.Getenv("ENV") == "production"
+var AtPrd = os.Getenv("ENV") == "production"
 
 func Index(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.tmpl", gin.H{
-		"prd":   atPrd,
+		"prd":   AtPrd,
 		"title": "React & Go Boilerplate",
 	})
 }
 
-func (server *Server) registerRoutes() {
+func (server *Server) RegisterRoutes() {
 	indexRoutes := server.Engine.Group("/")
 	{
 		indexRoutes.GET("/", Index)
