@@ -1,6 +1,6 @@
 FROM golang:latest
 
-EXPOSE 13109 13109
+EXPOSE 13109
 WORKDIR $GOPATH/src/github.com/MrHuxu/react-go-boilerplate
 
 COPY . $GOPATH/src/github.com/MrHuxu/react-go-boilerplate
