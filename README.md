@@ -31,6 +31,8 @@ A boilerplate for fastly building web application based on React & Go.
 
 ## Usage
 
+### For Development
+
 1. Clone the repo and install all dependencies:
 
 
@@ -42,21 +44,37 @@ A boilerplate for fastly building web application based on React & Go.
 
 2. It's recommended to install the [React DevTools](https://github.com/facebook/react-devtools) and [Redux DevTools](https://github.com/gaearon/redux-devtools) for frontend debugging.
 
+3. Launch the server:
 
-3. Run server:
+        # execute the command below, then you'll see the dashboard shown
+        # go visit http://localhost:8283 in your browser
+        # editing any file will let the server or frontend reload
 
-    - Development mode
+        npm run dev
 
-          # execute the command below, then you'll see the dashboard shown above
-          # go visit http://localhost:8283 in your browser
-          # editing any file will let the server or frontend reload
+### For Deployment
 
-          npm run dev
+**It is highly recommended to use [Docker](https://www.docker.com/) to deploy this project!!**
 
-    - Production mode
+#### Using Docker
 
-          # execute the command below
-          # all assets will be compiled to server/public/bundle.js
-          # go visit http://localhost:13109 in your browser
+1. Clone the repo and build Docker image:
 
-          npm run prd
+        go get github.com/MrHuxu/react-go-boilerplate && cd $GOPATH/src/github.com/MrHuxu/react-go-boilerplate
+        docker build . -t react-go-boilerplate
+        docker run -p 13109:13109 -d react-go-boilerplate
+
+2. Use `docker logs` command to monitor the logs of the server:
+
+        docker logs -f [container_id]
+
+
+#### Manually Build
+
+1. Clone the repo and install all dependencies(same as above).
+
+2. Launch the server:
+
+        # go visit http://localhost:13109 in your browser after executing the command
+
+        npm run prd
