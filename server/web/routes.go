@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-var AtPrd = os.Getenv("ENV") == "production"
+var AtPrd = os.Getenv("GIN_MODE") == "release"
 
 func Index(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.tmpl", gin.H{

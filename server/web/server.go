@@ -2,6 +2,8 @@ package web
 
 import (
 	"github.com/gin-gonic/gin"
+	"io"
+	"os"
 	"strconv"
 )
 
@@ -12,9 +14,9 @@ type Server struct {
 
 func NewServer(port int, templatePath string, staticPath string) *Server {
 	if AtPrd {
-		gin.SetMode(gin.ReleaseMode)
-		gin.DisableConsoleColor()
+		logToFile()
 	}
+
 	server := &Server{
 		Engine: gin.Default(),
 		Port:   port,
@@ -27,4 +29,11 @@ func NewServer(port int, templatePath string, staticPath string) *Server {
 
 func (svr *Server) Run() {
 	svr.Engine.Run(":" + strconv.Itoa(svr.Port))
+}
+
+func logToFile() {
+	gin.SetMode(gin.ReleaseMode)
+	gin.DisableConsoleColor()
+	file, _ := os.Create("log/gin.log")
+	gin.DefaultWriter = io.MultiWriter(file)
 }
