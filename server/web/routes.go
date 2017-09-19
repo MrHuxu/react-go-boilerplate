@@ -4,14 +4,11 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"os"
 )
-
-var AtPrd = os.Getenv("GIN_MODE") == "release"
 
 func Index(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.tmpl", gin.H{
-		"prd":   AtPrd,
+		"prd":   IsReleaseMode,
 		"title": "React & Go Boilerplate",
 	})
 }
