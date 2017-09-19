@@ -9,7 +9,7 @@ ENV NODE_VER 8.5.0
 WORKDIR /go/src/github.com/MrHuxu/react-go-boilerplate
 COPY . /go/src/github.com/MrHuxu/react-go-boilerplate
 
-# Install external dependencies, mainly curl & supervisor
+# Install external dependencies, mainly for Curl & Supervisor
 RUN \
   apt-get update -y && \
   apt-get install --no-install-recommends -y -q curl python build-essential git ca-certificates supervisor &&\
