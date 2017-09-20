@@ -1,3 +1,10 @@
+.DS_Store
 Dockerfile
 .git
 node_modules
+log
+main
+gin-bin
+server/public/bundle.js
+npm-debug.log
+debug
