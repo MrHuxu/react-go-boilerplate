@@ -8,10 +8,14 @@
     "transform-class-properties",
     "transform-decorators-legacy",
     "transform-export-extensions",
-    ["import", {
-      "libraryName": "antd",
-      "libraryDirectory": "lib",   // default: lib
-      "style": true
-    }]
+    "transform-object-rest-spread",
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "libraryDirectory": "lib",   // default: lib
+        "style": true
+      }
+    ]
   ]
 }
