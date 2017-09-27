@@ -2,7 +2,7 @@ FROM golang:latest
 
 EXPOSE 13109
 
-ENV NODE_VER 8.5.0
+ENV NODE_VER 8.6.0
 ENV GIN_MODE release
 ENV INSIDE_DOCKER true
 
