@@ -9,12 +9,12 @@ export default (state = {
   let { type, content } = action;
 
   switch (type) {
-    case REFRESH_RESULT:
-      copy.result = content;
-      break;
+  case REFRESH_RESULT:
+    copy.result = content;
+    break;
 
-    default:
-      return state;
+  default:
+    return state;
   }
 
   console.log(copy.result);
