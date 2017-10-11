@@ -21,9 +21,6 @@ import { global, btnArea } from '../styles/app';
 class App extends Component {
   render () {
     const { match, push } = this.props;
-    const a = { a: 1 };
-    const b = { ...a };
-    console.log(b);
     return (
       <div>
         <Style rules={ global } />
