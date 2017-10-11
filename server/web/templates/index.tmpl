@@ -4,13 +4,20 @@
     <meta name="viewport" content="width=device-width">
     <title>{{ .title }}</title>
     <link rel="shortcut icon" type="image" href="http://freewheel.tv/favicon.png">
+
+    {{ if .prd }}
+      <link href="/assets/bundle.css" rel="stylesheet">
+    {{ end }}
+
   </head>
   <body>
     <div id='react-go-boilerplate' class='full-height'/>
+
     {{ if .prd }}
       <script src="/assets/bundle.js"></script>
     {{ else }}
       <script src='http://localhost:6789/assets/bundle.js'></script>
     {{ end }}
+
   </body>
 </html>

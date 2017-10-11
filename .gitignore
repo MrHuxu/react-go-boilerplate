@@ -2,8 +2,7 @@
 main
 gin-bin
 node_modules/
-server/public/components
-server/public/bundle.js
+server/public
 server/db/bug-bash-tool
 .sass-cache
 log/
