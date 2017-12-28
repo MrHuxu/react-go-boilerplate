@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/MrHuxu/react-go-boilerplate#readme",
   "dependencies": {
-    "antd": "^2.13.10",
+    "antd": "^3.0.3",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-dev-expression": "^0.2.1",
@@ -66,10 +66,10 @@
     "webpack-dev-server": "^2.9.5"
   },
   "devDependencies": {
-    "babel-eslint": "^8.0.2",
+    "babel-eslint": "^8.1.2",
     "blessed": "^0.1.81",
     "blessed-xterm": "^1.1.14",
-    "eslint": "^4.12.0",
+    "eslint": "^4.14.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-react": "^5.0.0",
     "eslint-plugin-babel": "^4.1.2",

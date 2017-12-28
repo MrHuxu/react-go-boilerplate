@@ -34,6 +34,7 @@
     "semi": [2, "always"],
     "max-len": [1, 500, 2],
     "object-curly-spacing": [1, "always"],
+    "quotes": [2, "single"],
     "jsx-quotes": [2, "prefer-double"],
     "key-spacing": [2, {
       "singleLine": {
