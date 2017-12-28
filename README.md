@@ -1,5 +1,7 @@
 # React Go Boilerplate
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/MrHuxu/react-go-boilerplate)](https://goreportcard.com/report/github.com/MrHuxu/react-go-boilerplate)
+
 ## Description
 
 A boilerplate for fastly building web application based on React & Go.
