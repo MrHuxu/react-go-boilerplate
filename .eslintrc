@@ -11,7 +11,7 @@
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true,
-      "spread": true
+      "experimentalObjectRestSpread": true
     }
   },
   "env": {
