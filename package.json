@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/MrHuxu/react-go-boilerplate#readme",
   "dependencies": {
-    "antd": "^3.0.3",
+    "antd": "^3.1.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-dev-expression": "^0.2.1",
