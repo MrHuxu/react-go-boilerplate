@@ -11,3 +11,4 @@ npm-debug.log
 dump.rdb
 gin-bin
 debug
+package-lock.json

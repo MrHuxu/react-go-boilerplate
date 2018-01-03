@@ -68,7 +68,7 @@
   "devDependencies": {
     "babel-eslint": "^8.1.2",
     "blessed": "^0.1.81",
-    "blessed-xterm": "^1.1.14",
+    "blessed-xterm": "^1.1.16",
     "eslint": "^4.14.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-react": "^5.0.0",
