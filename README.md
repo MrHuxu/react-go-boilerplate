@@ -28,6 +28,7 @@ A boilerplate for fastly building web application based on React & Go.
 
 - Backend
 
+  - [x] Manage the Go dependencies by [dep](https://github.com/golang/dep)
   - [x] Web framework powered by [Gin](https://github.com/gin-gonic/gin)
   - [x] Hot reload powered by another [Gin](https://github.com/codegangsta/gin)
 
@@ -40,8 +41,10 @@ A boilerplate for fastly building web application based on React & Go.
 
         go get github.com/MrHuxu/react-go-boilerplate && cd $GOPATH/src/github.com/MrHuxu/react-go-boilerplate
 
-        go get github.com/gin-gonic/gin
-        go get github.com/codegangsta/gin
+        go get -u github.com/codegangsta/gin
+        go get -u github.com/golang/dep/cmd/dep
+        dep ensure
+
         npm install
 
 2. It's recommended to install the [React DevTools](https://github.com/facebook/react-devtools) and [Redux DevTools](https://github.com/gaearon/redux-devtools) for frontend debugging.
