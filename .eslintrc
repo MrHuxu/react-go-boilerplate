@@ -5,8 +5,7 @@
     "standard-react"
   ],
   "plugins": [
-    "react",
-    "import"
+    "react"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -17,13 +16,6 @@
   "env": {
     "es6": true,
     "browser": true
-  },
-  "globals": {
-    "__DEV__": false,
-    "__PROD__": false,
-    "__DEBUG__": false,
-    "__COVERAGE__": false,
-    "__BASENAME__": false
   },
   "rules": {
     "yoda": [2, "always", {
@@ -49,7 +41,6 @@
       }
     }],
     "no-multi-spaces": 2,
-    "import/extensions": 1,
     "react/display-name": 1,
     "react/jsx-boolean-value": 1,
     "react/jsx-no-undef": 1,

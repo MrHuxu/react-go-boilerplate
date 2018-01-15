@@ -6,10 +6,11 @@ gin-bin
 log/
 vendor/
 
+.sass-cache
+npm-debug.log
+package-lock.json
 node_modules/
 server/public
 server/db/bug-bash-tool
-.sass-cache
-npm-debug.log
 
 dump.rdb
