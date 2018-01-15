@@ -41,7 +41,6 @@ A boilerplate for fastly building web application based on React & Go.
 
         go get github.com/MrHuxu/react-go-boilerplate && cd $GOPATH/src/github.com/MrHuxu/react-go-boilerplate
 
-        go get -u github.com/codegangsta/gin
         go get -u github.com/golang/dep/cmd/dep
         dep ensure
 
@@ -55,6 +54,7 @@ A boilerplate for fastly building web application based on React & Go.
         # go visit http://localhost:8283 in your browser
         # editing any file will let the server or frontend reload
 
+        go get -u github.com/codegangsta/gin
         npm run dev
 
 ### For Deployment
