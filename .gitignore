@@ -11,6 +11,5 @@ npm-debug.log
 package-lock.json
 node_modules/
 server/public
-server/db/bug-bash-tool
 
 dump.rdb
