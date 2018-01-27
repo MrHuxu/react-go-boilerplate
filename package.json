@@ -8,10 +8,11 @@
     "lint-watch": "./node_modules/eslint-watch/bin/esw . --fix --ignore-path .gitignore --ext .jsx --ext .js -w",
     "webpack-dev-server": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js --port 6789 --hot",
     "dev-server": "gin --port 8283 --appPort 13109 run main.go",
+    "build-frontend": "./node_modules/webpack/bin/webpack.js --config webpack.config.prd.js",
+    "build-backend": "go build main.go",
+    "build":"npm run build-frontend && npm run build-backend",
     "dev": "node ./scripts/dashboard",
-    "webpack": "./node_modules/webpack/bin/webpack.js --config webpack.config.prd.js",
-    "prd-server": "go build main.go && GIN_MODE=release ./main",
-    "prd": "npm run webpack && npm run prd-server"
+    "prd": "npm run build && GIN_MODE=release ./main"
   },
   "repository": {
     "type": "git",

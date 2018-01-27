@@ -1,10 +1,13 @@
 package web
 
 import (
-	"github.com/gin-gonic/gin"
 	"io"
 	"os"
 	"strconv"
+
+	"github.com/gin-gonic/gin"
+
+	"github.com/MrHuxu/react-go-boilerplate/server/config"
 )
 
 var IsReleaseMode = os.Getenv("GIN_MODE") == "release"
@@ -15,7 +18,7 @@ type Server struct {
 	Port   int
 }
 
-func NewServer(port int, templatePath string, staticPath string) *Server {
+func NewServer(cfg config.ConfigInterface) *Server {
 	if IsReleaseMode {
 		gin.SetMode(gin.ReleaseMode)
 		gin.DisableConsoleColor()
@@ -24,10 +27,10 @@ func NewServer(port int, templatePath string, staticPath string) *Server {
 
 	server := &Server{
 		Engine: gin.Default(),
-		Port:   port,
+		Port:   cfg.ServerPort(),
 	}
-	server.Engine.LoadHTMLGlob(templatePath)
-	server.Engine.Static("/assets", staticPath)
+	server.Engine.LoadHTMLGlob(cfg.ServerTemplatesPath())
+	server.Engine.Static("/assets", cfg.ServerPublicPath())
 	server.RegisterRoutes()
 	return server
 }

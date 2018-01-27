@@ -1,0 +1,7 @@
+{
+  "server": {
+    "port": 13109,
+    "templates_path": "server/web/templates/*",
+    "public_path": "server/public"
+  }
+}
