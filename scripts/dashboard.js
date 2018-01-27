@@ -62,10 +62,4 @@ for (const command of commands) {
   dashboard.append(panel);
 }
 
-dashboard.key(['C-c'], function (ch, key) {
-  dashboard.destroy();
-  console.log('\x1Bc');
-  return process.exit(0);
-});
-
-dashboard.render();
+module.exports = dashboard;

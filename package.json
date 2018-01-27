@@ -11,7 +11,7 @@
     "build-frontend": "./node_modules/webpack/bin/webpack.js --config webpack.config.prd.js",
     "build-backend": "go build main.go",
     "build":"npm run build-frontend && npm run build-backend",
-    "dev": "node ./scripts/dashboard",
+    "dev": "node ./scripts/dev-server",
     "prd": "npm run build && GIN_MODE=release ./main"
   },
   "repository": {
