@@ -1,12 +1,12 @@
 package config
 
-type ConfigInterface interface {
+type Config interface {
 	ServerPort() int
 	ServerTemplatesPath() string
 	ServerPublicPath() string
 }
 
-type ConfigStruct struct {
+type ConfigImpl struct {
 	Server struct {
 		Port          int    `json:"port"`
 		TemplatesPath string `json:"templates_path"`
@@ -14,14 +14,14 @@ type ConfigStruct struct {
 	} `json:"server"`
 }
 
-func (cfg *ConfigStruct) ServerPort() int {
+func (cfg *ConfigImpl) ServerPort() int {
 	return cfg.Server.Port
 }
 
-func (cfg *ConfigStruct) ServerTemplatesPath() string {
+func (cfg *ConfigImpl) ServerTemplatesPath() string {
 	return cfg.Server.TemplatesPath
 }
 
-func (cfg *ConfigStruct) ServerPublicPath() string {
+func (cfg *ConfigImpl) ServerPublicPath() string {
 	return cfg.Server.PublicPath
 }
