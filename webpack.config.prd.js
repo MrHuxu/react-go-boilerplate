@@ -5,6 +5,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('bundle.css');
 
 module.exports = {
+  mode : 'production',
+
   entry : [
     './client/index'
   ],
@@ -15,44 +17,85 @@ module.exports = {
   },
 
   resolve : {
-    extensions : ['.jsx', '.js', '.json']
+    extensions : ['.jsx', '.js', '.json', '.less']
   },
 
   module : {
-    loaders : [{
+    rules : [{
       test    : /\.(js|jsx)$/,
-      exclude : /node_modules/,
-      loaders : ['babel-loader']
+      exclude : [/node_modules/],
+      loader  : 'babel-loader',
+      options : {
+        presets : [
+          'es2015',
+          'react'
+        ],
+        plugins : [
+          'syntax-decorators',
+          'transform-class-properties',
+          'transform-decorators-legacy',
+          'transform-export-extensions',
+          'transform-object-rest-spread',
+          [
+            'import',
+            {
+              libraryName      : 'antd',
+              libraryDirectory : 'lib', // default: lib
+              style            : true
+            }
+          ]
+        ]
+      }
     }, {
       test    : /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loaders : ['url-loader?limit=10000&minetype=application/font-woff']
+      loader  : 'url-loader',
+      options : {
+        limit    : 10000,
+        minetype : 'application/font-woff'
+      }
     }, {
-      test    : /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loaders : ['file-loader']
+      test   : /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader : 'file-loader'
     }, {
       test    : /\.(jpe?g|png|gif|svg)$/i,
-      loaders : ['url?limit=10000!img?progressive=true']
+      loader  : 'url-loader',
+      options : { limit: 10000 }
     }, {
       test : /\.css$/,
       use  : extractCSS.extract({
         fallback : 'style-loader',
-        use      : ['css-loader?minimize']
+        use      : [
+          {
+            loader  : 'css-loader',
+            options : {
+              importLoaders : 1,
+              minimize      : true
+            }
+          }
+        ]
       })
     }, {
-      test    : /\.less$/,
-      exclude : /\.modules\.less$/,
-      use     : extractCSS.extract({
+      test : /\.less$/,
+      use  : extractCSS.extract({
         fallback : 'style-loader',
-        use      : ['css-loader?minimize', 'less-loader']
+        use      : [
+          {
+            loader  : 'css-loader',
+            options : { minimize: true }
+          },
+          {
+            loader  : 'less-loader',
+            options : { javascriptEnabled: true }
+          }
+        ]
       })
     }]
   },
 
   plugins : [
     extractCSS,
-    new webpack.optimize.UglifyJsPlugin({ minimize: true }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV' : '"production"'
+    new webpack.LoaderOptionsPlugin({
+      minimize : true
     })
   ]
 };
