@@ -2,6 +2,8 @@ const { resolve } = require('path');
 const webpack = require('webpack');
 
 module.exports = {
+  mode : 'development',
+
   entry : './client/index',
 
   output : {
@@ -11,31 +13,74 @@ module.exports = {
   },
 
   resolve : {
-    extensions : ['.jsx', '.js', '.json']
+    extensions : ['.jsx', '.js', '.json', '.less']
   },
 
   module : {
-    loaders : [{
+    rules : [{
       test    : /\.(js|jsx)$/,
-      exclude : /node_modules/,
-      loaders : ['babel-loader']
+      exclude : [/node_modules/],
+      loader  : 'babel-loader',
+      options : {
+        presets : [
+          'es2015',
+          'react'
+        ],
+        plugins : [
+          'syntax-decorators',
+          'transform-class-properties',
+          'transform-decorators-legacy',
+          'transform-export-extensions',
+          'transform-object-rest-spread',
+          [
+            'import',
+            {
+              libraryName      : 'antd',
+              libraryDirectory : 'lib', // default: lib
+              style            : true
+            }
+          ]
+        ]
+      }
     }, {
       test    : /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loaders : ['url-loader?limit=10000&minetype=application/font-woff']
+      loader  : 'url-loader',
+      options : {
+        limit    : 10000,
+        minetype : 'application/font-woff'
+      }
     }, {
-      test    : /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loaders : ['file-loader']
+      test   : /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader : 'file-loader'
     }, {
       test    : /\.(jpe?g|png|gif|svg)$/i,
-      loaders : ['url?limit=10000!img?progressive=true']
+      loader  : 'url-loader',
+      options : { limit: 10000 }
     }, {
-      test    : /\.css$/,
-      exclude : /\.modules\.css$/,
-      loaders : ['style-loader', 'css-loader?sourceMap']
+      test : /\.css$/,
+      use  : [
+        'style-loader',
+        {
+          loader  : 'css-loader',
+          options : {
+            importLoaders : 1,
+            minimize      : true
+          }
+        }
+      ]
     }, {
-      test    : /\.less$/,
-      exclude : /\.modules\.less$/,
-      loaders : ['style-loader', 'css-loader', 'less-loader']
+      test : /\.less$/,
+      use  : [
+        'style-loader',
+        {
+          loader  : 'css-loader',
+          options : { minimize: true }
+        },
+        {
+          loader  : 'less-loader',
+          options : { javascriptEnabled: true }
+        }
+      ]
     }]
   },
 
@@ -46,15 +91,15 @@ module.exports = {
   devServer : {
     headers : {
       'Access-Control-Allow-Origin' : '*'
-    }
+    },
+    port : 6789,
+    hot  : true
   },
 
   devtool : 'source-map',
 
   plugins : [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV' : '"development"'
-    })
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };

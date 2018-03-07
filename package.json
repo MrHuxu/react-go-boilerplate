@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js . --fix --ignore-path .gitignore --ext .jsx --ext .js; exit 0",
     "lint-watch": "./node_modules/eslint-watch/bin/esw . --fix --ignore-path .gitignore --ext .jsx --ext .js -w",
-    "webpack-dev-server": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js --port 6789 --hot",
+    "webpack-dev-server": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js",
     "dev-server": "gin --port 8283 --appPort 13109 run main.go",
     "build-frontend": "./node_modules/webpack/bin/webpack.js --config webpack.config.prd.js",
     "build-backend": "go build main.go",
@@ -30,9 +30,9 @@
   },
   "homepage": "https://github.com/MrHuxu/react-go-boilerplate#readme",
   "dependencies": {
-    "antd": "^3.2.2",
+    "antd": "^3.2.3",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.3",
+    "babel-loader": "^7.1.4",
     "babel-plugin-dev-expression": "^0.2.1",
     "babel-plugin-import": "^1.6.5",
     "babel-plugin-syntax-decorators": "^6.13.0",
@@ -45,14 +45,14 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.10",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "file-loader": "^1.1.10",
+    "file-loader": "^1.1.11",
     "history": "^4.7.2",
     "jquery": "^3.2.1",
     "less": "^3.0.1",
     "less-loader": "^4.0.6",
     "nprogress": "^0.2.0",
     "prop-types": "^15.6.1",
-    "radium": "^0.22.0",
+    "radium": "^0.22.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-redux": "^5.0.7",
@@ -62,14 +62,15 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "style-loader": "^0.20.2",
-    "url-loader": "^0.6.2",
-    "webpack": "^4.0.1"
+    "uglifyjs-webpack-plugin": "^1.2.2",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
     "blessed": "^0.1.81",
     "blessed-xterm": "^1.1.16",
-    "eslint": "^4.18.1",
+    "eslint": "^4.18.2",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",
     "eslint-plugin-babel": "^4.1.2",
@@ -81,7 +82,7 @@
     "eslint-watch": "^3.1.2",
     "react-hot-loader": "^4.0.0",
     "redux-devtools-extension": "^2.13.2",
-    "webpack-cli": "^2.0.9",
+    "webpack-cli": "^2.0.10",
     "webpack-dev-server": "^3.1.0"
   }
 }

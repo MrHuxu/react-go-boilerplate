@@ -1,6 +1,7 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const extractCSS = new ExtractTextPlugin('bundle.css');
 
@@ -94,6 +95,7 @@ module.exports = {
 
   plugins : [
     extractCSS,
+    new UglifyJsPlugin(),
     new webpack.LoaderOptionsPlugin({
       minimize : true
     })
