@@ -1,6 +1,6 @@
 {
   "name": "react-go-boilerplate",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "main.go",
   "scripts": {
@@ -14,10 +14,7 @@
     "dev": "node ./scripts/dev-server",
     "prd": "npm run build && GIN_MODE=release ./main"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MrHuxu/react-go-boilerplate.git"
-  },
+  "repository": "git+https://github.com/MrHuxu/react-go-boilerplate.git",
   "keywords": [
     "react",
     "go",
@@ -41,7 +38,7 @@
     "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.10",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",

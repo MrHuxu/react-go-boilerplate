@@ -28,7 +28,7 @@ module.exports = {
       loader  : 'babel-loader',
       options : {
         presets : [
-          'es2015',
+          'env',
           'react'
         ],
         plugins : [
@@ -41,7 +41,7 @@ module.exports = {
             'import',
             {
               libraryName      : 'antd',
-              libraryDirectory : 'lib', // default: lib
+              libraryDirectory : 'lib',
               style            : true
             }
           ]

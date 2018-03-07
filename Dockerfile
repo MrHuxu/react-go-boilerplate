@@ -2,7 +2,7 @@ FROM golang:latest
 
 EXPOSE 13109
 
-ENV NODE_VER 8.7.0
+ENV NODE_VER 9.7.1
 ENV GIN_MODE release
 ENV INSIDE_DOCKER true
 
@@ -16,7 +16,7 @@ ENV PATH $PATH:/nodejs/bin
 WORKDIR /go/src/github.com/MrHuxu/react-go-boilerplate
 
 COPY . /go/src/github.com/MrHuxu/react-go-boilerplate
-RUN npm install && npm run webpack
+RUN npm install && npm run build-frontend
 RUN go build main.go
 
 ENTRYPOINT [ "./main" ]
