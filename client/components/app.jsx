@@ -13,11 +13,14 @@ import Random from './random';
 
 import { global, btnArea } from '../styles/app';
 
+const mapDispatchToProps = { push };
+
 /**
  * Use stateful component for enabling the hot module reload
  * HMR is not working for stateless component and it will reload the whole page
  */
 
+@connect(null, mapDispatchToProps)
 class App extends Component {
   render () {
     const { match, push } = this.props;
@@ -62,6 +65,4 @@ App.propTypes = {
   push : func.isRequired
 };
 
-const mapDispatchToProps = { push };
-
-export default connect(null, mapDispatchToProps)(App);
+export default App;
