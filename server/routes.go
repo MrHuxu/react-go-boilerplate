@@ -1,9 +1,10 @@
-package web
+package server
 
 import (
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func Index(c *gin.Context) {

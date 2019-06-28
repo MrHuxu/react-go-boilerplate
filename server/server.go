@@ -1,4 +1,4 @@
-package web
+package server
 
 import (
 	"io"
@@ -18,7 +18,7 @@ type Server struct {
 	Port   int
 }
 
-func NewServer(cfg config.Config) *Server {
+func New(cfg config.Config) *Server {
 	if IsReleaseMode {
 		gin.SetMode(gin.ReleaseMode)
 		gin.DisableConsoleColor()

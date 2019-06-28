@@ -62,20 +62,14 @@ module.exports = {
         'style-loader',
         {
           loader  : 'css-loader',
-          options : {
-            importLoaders : 1,
-            minimize      : true
-          }
+          options : { importLoaders: 1 }
         }
       ]
     }, {
       test : /\.less$/,
       use  : [
         'style-loader',
-        {
-          loader  : 'css-loader',
-          options : { minimize: true }
-        },
+        { loader: 'css-loader' },
         {
           loader  : 'less-loader',
           options : { javascriptEnabled: true }

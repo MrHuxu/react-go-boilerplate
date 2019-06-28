@@ -6,8 +6,8 @@ import (
 )
 
 var (
-	GlobalConfig = &ConfigImpl{}
-	configPath   = "config/config.json"
+	DefaultConfig = &ConfigImpl{}
+	configPath    = "config/server.json"
 )
 
 func init() {
@@ -18,5 +18,5 @@ func init() {
 	defer configFile.Close()
 
 	jsonParser := json.NewDecoder(configFile)
-	jsonParser.Decode(GlobalConfig)
+	jsonParser.Decode(DefaultConfig)
 }

@@ -1,22 +1,42 @@
-FROM golang:latest
+FROM node:11.15.0 AS node-builder
 
-EXPOSE 13109
+ENV NODE_ENV production
 
-ENV NODE_VER 9.7.1
+WORKDIR /work
+COPY ./client /work/client
+COPY ./package.json /work/
+COPY ./package-lock.json /work/
+COPY ./webpack.config.prd.js /work/
+
+RUN npm install
+RUN ./node_modules/webpack/bin/webpack.js --config webpack.config.prd.js
+
+FROM golang:latest AS go-builder
+
+ENV GO111MODULE on
+ENV GOPROXY https://goproxy.io
+ENV CGO_ENABLED 0
+
+WORKDIR /work
+COPY ./main.go /work/
+COPY ./server /work/server
+COPY ./go.mod /work/
+COPY ./go.sum /work/
+
+RUN go mod download
+RUN go build main.go
+
+FROM scratch
+
+ENV NODE_ENV production
 ENV GIN_MODE release
 ENV INSIDE_DOCKER true
 
-RUN go get github.com/gin-gonic/gin
-RUN apt-get update -y && \
-  apt-get install --no-install-recommends -y -q curl python build-essential git ca-certificates
+WORKDIR /output
+COPY ./config/config.json /output/config/
+COPY ./server/web/templates /output/server/web/templates
+COPY --from=node-builder /work/server/public /output/server/public
+COPY --from=go-builder /work/main /output/
 
-RUN mkdir /nodejs && curl http://nodejs.org/dist/v${NODE_VER}/node-v${NODE_VER}-linux-x64.tar.gz | tar xvzf - -C /nodejs --strip-components=1
-ENV PATH $PATH:/nodejs/bin
-
-WORKDIR /go/src/github.com/MrHuxu/react-go-boilerplate
-
-COPY . /go/src/github.com/MrHuxu/react-go-boilerplate
-RUN npm install && npm run build-frontend
-RUN go build main.go
-
+EXPOSE 13109
 ENTRYPOINT [ "./main" ]

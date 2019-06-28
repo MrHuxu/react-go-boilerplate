@@ -1,9 +1,7 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-
-const extractCSS = new ExtractTextPlugin('bundle.css');
 
 module.exports = {
   mode : 'production',
@@ -13,7 +11,7 @@ module.exports = {
   ],
 
   output : {
-    path     : resolve(__dirname, 'server', 'public'),
+    path     : resolve(__dirname, 'client', 'public'),
     filename : 'bundle.js'
   },
 
@@ -63,39 +61,38 @@ module.exports = {
       options : { limit: 10000 }
     }, {
       test : /\.css$/,
-      use  : extractCSS.extract({
-        fallback : 'style-loader',
-        use      : [
-          {
-            loader  : 'css-loader',
-            options : {
-              importLoaders : 1,
-              minimize      : true
-            }
+      use  : [
+        MiniCssExtractPlugin.loader,
+        {
+          loader  : 'css-loader',
+          options : {
+            importLoaders : 1
           }
-        ]
-      })
+        }
+      ]
     }, {
       test : /\.less$/,
-      use  : extractCSS.extract({
-        fallback : 'style-loader',
-        use      : [
-          {
-            loader  : 'css-loader',
-            options : { minimize: true }
-          },
-          {
-            loader  : 'less-loader',
-            options : { javascriptEnabled: true }
+      use  : [
+        MiniCssExtractPlugin.loader,
+        {
+          loader  : 'css-loader',
+          options : {
+            importLoaders : 1
           }
-        ]
-      })
+        },
+        {
+          loader  : 'less-loader',
+          options : { javascriptEnabled: true }
+        }
+      ]
     }]
   },
 
   plugins : [
-    extractCSS,
     new UglifyJsPlugin(),
+    new MiniCssExtractPlugin({
+      filename : 'bundle.css'
+    }),
     new webpack.LoaderOptionsPlugin({
       minimize : true
     })
