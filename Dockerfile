@@ -33,9 +33,9 @@ ENV GIN_MODE release
 ENV INSIDE_DOCKER true
 
 WORKDIR /output
-COPY ./config/config.json /output/config/
-COPY ./server/web/templates /output/server/web/templates
-COPY --from=node-builder /work/server/public /output/server/public
+COPY ./config/server.json /output/config/
+COPY ./server/templates /output/server/templates
+COPY --from=node-builder /work/client/public /output/client/public
 COPY --from=go-builder /work/main /output/
 
 EXPOSE 13109
