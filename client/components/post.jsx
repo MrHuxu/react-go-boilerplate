@@ -14,7 +14,8 @@ const Post = ({ createSomething }) => {
 
       <Button onClick={ () => {
         createSomething({ key: value.value });
-      } }>
+      } }
+      >
         post!
       </Button>
     </div>

@@ -44,7 +44,7 @@ class App extends Component {
 
         <div>
           { ('/' === window.location.hostname || match.isExact) ? (
-            <Redirect to={ '/get' } />
+            <Redirect to="/get" />
           ) : null }
           <Route path="/get" component={ Get } />
           <Route path="/post" component={ Post } />

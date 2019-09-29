@@ -5,8 +5,8 @@ import {
 export default (state = {
   result : null
 }, action) => {
-  let copy = Object.assign({}, state);
-  let { type, content } = action;
+  const copy = Object.assign({}, state);
+  const { type, content } = action;
 
   switch (type) {
   case REFRESH_RESULT:

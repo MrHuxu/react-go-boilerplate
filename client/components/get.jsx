@@ -13,10 +13,11 @@ const Get = ({ fetchSomething }) => {
       <input placeholder="value" ref={ node => value = node } />
 
       <Button onClick={ () => {
-        let tmp = {};
+        const tmp = {};
         tmp[key.value] = value.value;
         fetchSomething(tmp);
-      } }>
+      } }
+      >
         get!
       </Button>
     </div>
