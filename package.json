@@ -27,7 +27,7 @@
     "webpack-dev-server": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js"
   },
   "dependencies": {
-    "acorn": "^7.1.0",
+    "acorn": "^7.1.1",
     "antd": "^3.23.5",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
