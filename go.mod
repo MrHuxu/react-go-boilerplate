@@ -2,7 +2,11 @@ module github.com/MrHuxu/react-go-boilerplate
 
 go 1.12
 
-require github.com/gin-gonic/gin v1.4.0
+require (
+	github.com/gin-gonic/gin v1.7.0
+	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
+	github.com/modern-go/reflect2 v1.0.1 // indirect
+)
 
 replace (
 	golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2 => github.com/golang/crypto v0.0.0-20190308221718-c2843e01d9a2
